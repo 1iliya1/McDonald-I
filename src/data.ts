@@ -1,0 +1,317 @@
+import { MenuItem, Restaurant, Deal } from "./types";
+
+export const MENU_ITEMS: MenuItem[] = [
+  {
+    id: "m1",
+    name: "Big Mac®",
+    category: "burgers",
+    price: 5.89,
+    calories: 590,
+    isFeatured: true,
+    image: "🍔",
+    description: "Two 100% all-beef patties, legendary special Mac sauce, crisp shredded lettuce, melted slice of processed cheese, dill pickles, and onions, all stacked in a double-decker sesame seed bun.",
+    allergens: ["Gluten", "Sesame", "Milk", "Egg", "Soy"],
+    tags: ["High-Protein", "Classic", "Signature"],
+    nutrition: { protein: 25, fat: 30, carbs: 45, sodium: 1050 }
+  },
+  {
+    id: "m2",
+    name: "Quarter Pounder® with Cheese",
+    category: "burgers",
+    price: 6.29,
+    calories: 520,
+    isFeatured: true,
+    image: "🥩",
+    description: "A quarter-pound of 100% fresh, juicy beef cooked to order, topped with slivered onions, tangy pickles, and two slices of melted cheese on a toasted sesame seed bun.",
+    allergens: ["Gluten", "Sesame", "Milk", "Soy"],
+    tags: ["High-Protein", "Fresh Beef", "Savory"],
+    nutrition: { protein: 30, fat: 28, carbs: 41, sodium: 1140 }
+  },
+  {
+    id: "m3",
+    name: "DeLuxe Double Cheeseburger",
+    category: "burgers",
+    price: 4.19,
+    calories: 450,
+    isFeatured: false,
+    image: "🧀",
+    description: "Two 100% beef patties, melted American cheese, lettuce, pickles, onions, ketchup, and mustard on a soft toasted bun.",
+    allergens: ["Gluten", "Milk", "Egg", "Soy"],
+    tags: ["Classic", "Value-Saver"],
+    nutrition: { protein: 22, fat: 24, carbs: 36, sodium: 980 }
+  },
+  {
+    id: "m4",
+    name: "McChicken®",
+    category: "chicken-fish",
+    price: 3.49,
+    calories: 400,
+    isFeatured: false,
+    image: "🥪",
+    description: "A crispy chicken patty seasoned perfectly, served with shredded Iceberg lettuce and creamy mayonnaise on a soft toasted bun.",
+    allergens: ["Gluten", "Egg", "Soy"],
+    tags: ["Chicken", "Light-Bite"],
+    nutrition: { protein: 14, fat: 19, carbs: 39, sodium: 560 }
+  },
+  {
+    id: "m5",
+    name: "Crispy McChicken® Nuggets (10 pc)",
+    category: "chicken-fish",
+    price: 5.99,
+    calories: 410,
+    isFeatured: true,
+    image: "🍗",
+    description: "Tender, juicy Chicken McNuggets® made with 100% white meat chicken, individually shaped and battered in a crisp tempura coating.",
+    allergens: ["Gluten", "Soy"],
+    tags: ["Chicken", "Sharable", "Crispy"],
+    nutrition: { protein: 20, fat: 22, carbs: 28, sodium: 850 }
+  },
+  {
+    id: "m6",
+    name: "Filet-O-Fish®",
+    category: "chicken-fish",
+    price: 4.69,
+    calories: 390,
+    isFeatured: false,
+    image: "🐟",
+    description: "Wild-caught Alaska Pollock from a sustainable fishery, topped with melty American cheese half-slice and classic creamy tartar sauce on a warm steamed bun.",
+    allergens: ["Gluten", "Fish", "Milk", "Egg", "Soy"],
+    tags: ["Seafood", "Sustainable"],
+    nutrition: { protein: 16, fat: 18, carbs: 38, sodium: 590 }
+  },
+  {
+    id: "m7",
+    name: "Premium Grilled Chicken Salad",
+    category: "chicken-fish",
+    price: 6.99,
+    calories: 310,
+    isFeatured: false,
+    image: "🥗",
+    description: "Juicy, grilled 100% chicken breast slivers over a bed of crispy romaine lettuce, baby spinach, cherry tomatoes, and shaved parmesan.",
+    allergens: ["Milk"],
+    tags: ["Gluten-Free", "High-Protein", "Low-Carb", "Under 500 kcal", "Healthy"],
+    nutrition: { protein: 28, fat: 12, carbs: 10, sodium: 620 }
+  },
+  {
+    id: "m8",
+    name: "World Famous Fries® (Medium)",
+    category: "sides",
+    price: 3.29,
+    calories: 350,
+    isFeatured: true,
+    image: "🍟",
+    description: "Our signature potatoes, cut thin, fried golden brown to a perfect outer crunch, while remaining soft and fluffy inside. Salted precisely to order.",
+    allergens: [],
+    tags: ["Gluten-Free", "Vegetarian", "Sides", "Best-Seller"],
+    nutrition: { protein: 4, fat: 16, carbs: 44, sodium: 230 }
+  },
+  {
+    id: "m9",
+    name: "Loaded Golden Hash Brown",
+    category: "sides",
+    price: 2.19,
+    calories: 140,
+    isFeatured: false,
+    image: "🥔",
+    description: "A crunchy fried potato patty shredded finely inside. Golden, delicious, and incredibly satisfying as a breakfast staple or afternoon snack.",
+    allergens: [],
+    tags: ["Gluten-Free", "Vegetarian", "Breakfast", "Sides", "Under 500 kcal"],
+    nutrition: { protein: 1, fat: 8, carbs: 15, sodium: 310 }
+  },
+  {
+    id: "m10",
+    name: "Egg McMuffin®",
+    category: "breakfast",
+    price: 4.29,
+    calories: 310,
+    isFeatured: true,
+    image: "🍳",
+    description: "A freshly cracked Grade A egg, crispy slice of Canadian bacon, and melted American cheese perfectly balanced on an English muffin.",
+    allergens: ["Gluten", "Milk", "Egg", "Soy"],
+    tags: ["High-Protein", "Breakfast", "Morning-Classic", "Under 500 kcal"],
+    nutrition: { protein: 17, fat: 13, carbs: 30, sodium: 770 }
+  },
+  {
+    id: "m11",
+    name: "Hot Fudge Cake Sundae",
+    category: "desserts",
+    price: 3.89,
+    calories: 380,
+    isFeatured: false,
+    image: "🍨",
+    description: "Creamy vanilla soft-serve ice cream drizzled in hot, decadent fudge sauce, layered with a bite-sized chocolate brownie piece.",
+    allergens: ["Milk", "Gluten", "Egg", "Soy"],
+    tags: ["Sweet", "Cold", "Under 500 kcal"],
+    nutrition: { protein: 6, fat: 12, carbs: 55, sodium: 180 }
+  },
+  {
+    id: "m12",
+    name: "Warm Baked Apple Pie",
+    category: "desserts",
+    price: 1.99,
+    calories: 230,
+    isFeatured: false,
+    image: "🥧",
+    description: "Classic turnover pie baked fresh daily with spiced, sweet apples inside a crisp, lattice pastry crust dusted with sugar crystals.",
+    allergens: ["Gluten"],
+    tags: ["Sweet", "Warm", "Vegetarian", "Under 500 kcal"],
+    nutrition: { protein: 2, fat: 11, carbs: 32, sodium: 120 }
+  },
+  {
+    id: "m13",
+    name: "Creamy McFlurry® with Oreo®",
+    category: "desserts",
+    price: 4.59,
+    calories: 510,
+    isFeatured: true,
+    image: "🍦",
+    description: "A thick, velvety soft-serve ice cream mixed with crushed Oreo® chocolate sandwich cookies for the ultimate crunchy chocolate dessert experience.",
+    allergens: ["Gluten", "Milk", "Soy"],
+    tags: ["Sweet", "Signature", "Cold"],
+    nutrition: { protein: 9, fat: 16, carbs: 80, sodium: 280 }
+  },
+  {
+    id: "m14",
+    name: "Crisp Cold Coca-Cola® (Medium)",
+    category: "drinks",
+    price: 1.99,
+    calories: 220,
+    isFeatured: false,
+    image: "🥤",
+    description: "An ice-cold cup of crisp, classic refreshing Coca-Cola® that pairs flawlessly with any hot sandwich or golden side item.",
+    allergens: [],
+    tags: ["Cold", "Sweet", "Vegetarian"],
+    nutrition: { protein: 0, fat: 0, carbs: 55, sodium: 45 }
+  },
+  {
+    id: "m15",
+    name: "Premium McCafé® Vanilla Latte",
+    category: "drinks",
+    price: 3.49,
+    calories: 190,
+    isFeatured: false,
+    image: "☕",
+    description: "Bold espresso roast beans mixed with freshly steamed whole milk and authentic vanilla syrup, served hot with a light layer of milk foam.",
+    allergens: ["Milk"],
+    tags: ["Warm", "Coffee", "Under 500 kcal"],
+    nutrition: { protein: 8, fat: 6, carbs: 26, sodium: 110 }
+  }
+];
+
+export const LIVE_DEALS: Deal[] = [
+  {
+    id: "d1",
+    title: "Free Medium Fries with any purchase",
+    description: "Use code in app or online checkout. Requires a minimum spend of $1.00.",
+    code: "FREEFRIES",
+    discountValue: 3.29,
+    minimumSpend: 1.00,
+    category: "Sides",
+    image: "🍟",
+    urgencyDaysLeft: 1,
+    isPremiumRewards: false
+  },
+  {
+    id: "d2",
+    title: "$2 Off Any Signature Double Burger",
+    description: "Apply $2.00 off at check out today! Perfect for double the flavor on Big Mac or Quarter Pounder.",
+    code: "DOUBLETASTE",
+    discountValue: 2.00,
+    minimumSpend: 5.00,
+    category: "Burgers",
+    image: "🍔",
+    urgencyDaysLeft: 3,
+    isPremiumRewards: false
+  },
+  {
+    id: "d3",
+    title: "15% off your entire Sunrise Breakfast",
+    description: "Valid during breakfast hours (5:00 AM - 10:30 AM). Discount applies automatically with code.",
+    code: "SUNRISE15",
+    discountValue: 1.50, // Calculated percentage in real flow
+    minimumSpend: 4.00,
+    category: "Breakfast",
+    image: "🍳",
+    urgencyDaysLeft: 5,
+    isPremiumRewards: false
+  },
+  {
+    id: "d4",
+    title: "FREE Baked Apple Pie (800 Points)",
+    description: "Redeem 800 Golden Points for a warm baked pastry. No minimum purchase required.",
+    code: "REDEEMPIE",
+    discountValue: 1.99,
+    minimumSpend: 0.00,
+    category: "Rewards",
+    image: "🥧",
+    urgencyDaysLeft: 12,
+    isPremiumRewards: true
+  },
+  {
+    id: "d5",
+    title: "FREE Big Mac® (1500 Points)",
+    description: "Redeem 1,500 loyalty points for a free signature Big Mac burger. Experience pure comfort.",
+    code: "REDEEMMAC",
+    discountValue: 5.89,
+    minimumSpend: 0.00,
+    category: "Rewards",
+    image: "🍔",
+    urgencyDaysLeft: 24,
+    isPremiumRewards: true
+  }
+];
+
+export const MOCK_RESTAURANTS: Restaurant[] = [
+  {
+    id: "r1",
+    name: "Golden Arches - Downtown Plaza",
+    address: "455 Market St, San Francisco, CA 94105",
+    distance: "0.4",
+    hours: "Open 24 Hours",
+    hasDriveThru: false,
+    hasMcCafe: true,
+    hasPlayplace: false,
+    phone: "(415) 555-0192",
+    lat: 37.7885,
+    lng: -122.3995
+  },
+  {
+    id: "r2",
+    name: "Golden Arches - SOMA Express",
+    address: "710 4th Street, San Francisco, CA 94107",
+    distance: "1.1",
+    hours: "5:00 AM - Midnight",
+    hasDriveThru: true,
+    hasMcCafe: true,
+    hasPlayplace: false,
+    phone: "(415) 555-0144",
+    lat: 37.7770,
+    lng: -122.3945
+  },
+  {
+    id: "r3",
+    name: "Golden Arches - Fisherman's Wharf",
+    address: "2850 Jones St, San Francisco, CA 94133",
+    distance: "2.3",
+    hours: "6:00 AM - 11:00 PM",
+    hasDriveThru: true,
+    hasMcCafe: true,
+    hasPlayplace: true,
+    phone: "(415) 555-0112",
+    lat: 37.8078,
+    lng: -122.4172
+  },
+  {
+    id: "r4",
+    name: "Golden Arches - Sunset Boulevard",
+    address: "1800 Sloat Blvd, San Francisco, CA 94132",
+    distance: "5.7",
+    hours: "Open 24 Hours",
+    hasDriveThru: true,
+    hasMcCafe: true,
+    hasPlayplace: true,
+    phone: "(415) 555-0185",
+    lat: 37.7348,
+    lng: -122.4932
+  }
+];

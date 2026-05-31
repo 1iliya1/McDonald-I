@@ -1,0 +1,6 @@
+{
+  "name": "Golden Arches AI Ordering & Menu Hub",
+  "description": "An interactive, high-conversion food ordering platform inspired by iconic brand tokens, featuring modern layouts and advanced Google Gemini-powered chat, search, personalization, and menu reasoning.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
